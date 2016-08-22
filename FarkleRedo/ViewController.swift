@@ -16,16 +16,21 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     @IBOutlet weak var diceFour: DiceImageView!
     @IBOutlet weak var diceThree: DiceImageView!
     @IBOutlet weak var diceTwo: DiceImageView!
-    @IBOutlet weak var userScore: UILabel!
+    @IBOutlet weak var userScoreLabel: UILabel!
+    @IBOutlet weak var roundScoreLabel: UILabel!
     
     var selectedDice = NSMutableArray()
     var boardDice = NSMutableArray()
     var multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
+    var bankScore = 0
+    var roundScore = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         boardDice.addObjectsFromArray([diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix])
+        userScoreLabel.text = "User score: \(bankScore)"
+        roundScoreLabel.text = "Round score: \(roundScore)"
         
         for die in boardDice {
             let realDie = die as! DiceImageView
@@ -34,16 +39,33 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     }
     
     @IBAction func onRollButtonTapped(sender: UIButton) {
+        multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
+        
         for die in boardDice  {
             let realDie = die as! DiceImageView
             realDie.roll()
         }
         
-        checkForFarkle(boardDice) == true ? print("You farkled") : print("You're good")
+        if checkForFarkle(boardDice) == true {
+            print("You farkled!")
+            reset()
+        }
+        else {
+            print("You're good")
+        }
         
     }
     
+    @IBAction func onBankButtonTapped(sender: UIButton) {
+        bankScore = bankScore + roundScore
+        userScoreLabel.text = "User score: \(bankScore)"
+        reset()
+    }
+    
+    
     func diceImageViewTapped(die: DiceImageView) {
+        multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
+        
         if !selectedDice.containsObject(die) {
             die.alpha = 0.35
             boardDice.removeObject(die)
@@ -63,67 +85,67 @@ class ViewController: UIViewController, DiceImageViewDelegate {
             for i in 0..<multiplesArray.count  {
                 if Int(realDie.imageName)! == i+1 {
                     multiplesArray[i] = multiplesArray[i] as! Int + 1
-                    selectedDice.removeObject(die)
                 }
             }
         }
     }
     
     func scoreRound(diceArray: NSMutableArray) -> Int {
-        var roundScore = 0
+        var scoreForRound = 0
         var singleCounter = 0
         var pairCounter = 0
         var tripleCounter = 0
         var fourOfAKind = false
-        
-        self.countMultiples(diceArray)
+
+        countMultiples(diceArray)
         
         for i in 0 ..< multiplesArray.count {
             
             let multipleOfI = multiplesArray[i] as! Int
-            print("There are \(multipleOfI) \(i+1)'s")
+            //print("There are \(multipleOfI) \(i+1)'s")
             
             switch multipleOfI {
             case 1:
-                roundScore += singleScore(i)
+                scoreForRound += multiplierScore(i, multiplierFactor: 1)
                 singleCounter += 1
                 break
             case 2:
-                roundScore += pairScore(i)
+                scoreForRound += multiplierScore(i, multiplierFactor: 2)
                 pairCounter += 1
+                break
             case 3:
-                roundScore += tripleScore(i)
+                scoreForRound += multiplierScore(i, multiplierFactor: 3)
                 tripleCounter += 1
+                break
             case 4:
-                roundScore += 1000
+                scoreForRound += 1000
                 fourOfAKind = true
+                break
             case 5:
-                roundScore += 2000
+                scoreForRound += 2000
+                break
             case 6:
-                roundScore += 3000
+                scoreForRound += 3000
+                break
             default:
-                print("Error.")
+                break
             }
-            
             if tripleCounter == 2 {
-                roundScore = 2500
+                scoreForRound = 2500
             }
-            
             if pairCounter == 3 {
-                roundScore = 1500
+                scoreForRound = 1500
             }
-            
             if pairCounter == 1 && fourOfAKind {
-                roundScore = 1500
+                scoreForRound = 1500
             }
-            
             if singleCounter == 6 {
-                roundScore = 1500
+                scoreForRound = 1500
             }
         }
         
-        print("Round score is: \(roundScore)")
-        return roundScore
+        roundScoreLabel.text = "Round score: \(scoreForRound)"
+        return scoreForRound
     }
     
     
@@ -131,52 +153,40 @@ class ViewController: UIViewController, DiceImageViewDelegate {
         return scoreRound(diceArray) == 0 ? true : false
     }
     
-    func singleScore(diceNumber: Int) -> Int {
+    func multiplierScore(diceNumber: Int, multiplierFactor: Int) -> Int {
         let realDiceNumber = diceNumber + 1
         
         switch realDiceNumber {
         case 1:
-            return 100
-        case 5:
-            return 50
-        default:
-            return 0
-        }
-        
-    }
-    
-    func pairScore(diceNumber: Int) -> Int {
-        let realDiceNumber = diceNumber + 1
-        
-        switch realDiceNumber {
-        case 1:
-            return 200
-        case 5:
-            return 100
-        default:
-            return 0
-        }
-    }
-    
-    func tripleScore(diceNumber: Int) -> Int {
-        let realDiceNumber = diceNumber + 1
-        
-        switch realDiceNumber {
-        case 1:
-            return 1000
+            if multiplierFactor == 1 { return 100 } else if multiplierFactor == 2 { return 200 } else { return 1000 }
         case 2:
-            return 200
+            if multiplierFactor == 3 { return 200 } else { return 0 }
         case 3:
-            return 300
+            if multiplierFactor == 3 { return 300 } else { return 0 }
         case 4:
-            return 400
+            if multiplierFactor == 3 { return 400 } else { return 0 }
         case 5:
-            return 500
+            if multiplierFactor == 1 { return 50 } else if multiplierFactor == 2 { return 100 } else { return 500 }
         case 6:
-            return 600
+            if multiplierFactor == 3 { return 600 } else { return 0 }
         default:
+            print("Error")
             return 0
         }
     }
+    
+    func reset() {
+        multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
+        roundScore = 0
+        roundScoreLabel.text = "Round score: \(roundScore)"
+        
+        boardDice.addObjectsFromArray([diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix])
+        selectedDice = NSMutableArray()
+        for die in boardDice {
+            let realDie = die as! DiceImageView
+            realDie.alpha = 1.0
+        }
+    }
+    
 }
 
