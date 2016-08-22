@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBCCC27A1D6884FC0090EBC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCC2791D6884FC0090EBC3 /* AppDelegate.swift */; };
+		DBCCC27C1D6884FC0090EBC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCC27B1D6884FC0090EBC3 /* ViewController.swift */; };
+		DBCCC27F1D6884FC0090EBC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCCC27D1D6884FC0090EBC3 /* Main.storyboard */; };
+		DBCCC2811D6884FC0090EBC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBCCC2801D6884FC0090EBC3 /* Assets.xcassets */; };
+		DBCCC2841D6884FC0090EBC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCCC2821D6884FC0090EBC3 /* LaunchScreen.storyboard */; };
+		DBCCC29E1D6887470090EBC3 /* DiceImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCC29D1D6887470090EBC3 /* DiceImageView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBCCC28B1D6884FC0090EBC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBCCC26E1D6884FC0090EBC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBCCC2751D6884FC0090EBC3;
+			remoteInfo = FarkleRedo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DBCCC2761D6884FC0090EBC3 /* FarkleRedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarkleRedo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBCCC2791D6884FC0090EBC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBCCC27B1D6884FC0090EBC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBCCC27E1D6884FC0090EBC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBCCC2801D6884FC0090EBC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBCCC2831D6884FC0090EBC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBCCC2851D6884FC0090EBC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBCCC28A1D6884FC0090EBC3 /* FarkleRedoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarkleRedoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBCCC2901D6884FC0090EBC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBCCC29D1D6887470090EBC3 /* DiceImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiceImageView.swift; path = ../DiceImageView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBCCC2731D6884FC0090EBC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBCCC2871D6884FC0090EBC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBCCC26D1D6884FC0090EBC3 = {
+			isa = PBXGroup;
+			children = (
+				DBCCC2781D6884FC0090EBC3 /* FarkleRedo */,
+				DBCCC28D1D6884FC0090EBC3 /* FarkleRedoTests */,
+				DBCCC2771D6884FC0090EBC3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBCCC2771D6884FC0090EBC3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBCCC2761D6884FC0090EBC3 /* FarkleRedo.app */,
+				DBCCC28A1D6884FC0090EBC3 /* FarkleRedoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBCCC2781D6884FC0090EBC3 /* FarkleRedo */ = {
+			isa = PBXGroup;
+			children = (
+				DBCCC2791D6884FC0090EBC3 /* AppDelegate.swift */,
+				DBCCC29D1D6887470090EBC3 /* DiceImageView.swift */,
+				DBCCC27B1D6884FC0090EBC3 /* ViewController.swift */,
+				DBCCC27D1D6884FC0090EBC3 /* Main.storyboard */,
+				DBCCC2801D6884FC0090EBC3 /* Assets.xcassets */,
+				DBCCC2821D6884FC0090EBC3 /* LaunchScreen.storyboard */,
+				DBCCC2851D6884FC0090EBC3 /* Info.plist */,
+			);
+			path = FarkleRedo;
+			sourceTree = "<group>";
+		};
+		DBCCC28D1D6884FC0090EBC3 /* FarkleRedoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBCCC2901D6884FC0090EBC3 /* Info.plist */,
+			);
+			path = FarkleRedoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBCCC2751D6884FC0090EBC3 /* FarkleRedo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBCCC2931D6884FC0090EBC3 /* Build configuration list for PBXNativeTarget "FarkleRedo" */;
+			buildPhases = (
+				DBCCC2721D6884FC0090EBC3 /* Sources */,
+				DBCCC2731D6884FC0090EBC3 /* Frameworks */,
+				DBCCC2741D6884FC0090EBC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FarkleRedo;
+			productName = FarkleRedo;
+			productReference = DBCCC2761D6884FC0090EBC3 /* FarkleRedo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBCCC2891D6884FC0090EBC3 /* FarkleRedoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBCCC2961D6884FC0090EBC3 /* Build configuration list for PBXNativeTarget "FarkleRedoTests" */;
+			buildPhases = (
+				DBCCC2861D6884FC0090EBC3 /* Sources */,
+				DBCCC2871D6884FC0090EBC3 /* Frameworks */,
+				DBCCC2881D6884FC0090EBC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBCCC28C1D6884FC0090EBC3 /* PBXTargetDependency */,
+			);
+			name = FarkleRedoTests;
+			productName = FarkleRedoTests;
+			productReference = DBCCC28A1D6884FC0090EBC3 /* FarkleRedoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBCCC26E1D6884FC0090EBC3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Yemi Ajibola";
+				TargetAttributes = {
+					DBCCC2751D6884FC0090EBC3 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DBCCC2891D6884FC0090EBC3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = DBCCC2751D6884FC0090EBC3;
+					};
+				};
+			};
+			buildConfigurationList = DBCCC2711D6884FC0090EBC3 /* Build configuration list for PBXProject "FarkleRedo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBCCC26D1D6884FC0090EBC3;
+			productRefGroup = DBCCC2771D6884FC0090EBC3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBCCC2751D6884FC0090EBC3 /* FarkleRedo */,
+				DBCCC2891D6884FC0090EBC3 /* FarkleRedoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBCCC2741D6884FC0090EBC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBCCC2841D6884FC0090EBC3 /* LaunchScreen.storyboard in Resources */,
+				DBCCC2811D6884FC0090EBC3 /* Assets.xcassets in Resources */,
+				DBCCC27F1D6884FC0090EBC3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBCCC2881D6884FC0090EBC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBCCC2721D6884FC0090EBC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBCCC27C1D6884FC0090EBC3 /* ViewController.swift in Sources */,
+				DBCCC27A1D6884FC0090EBC3 /* AppDelegate.swift in Sources */,
+				DBCCC29E1D6887470090EBC3 /* DiceImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBCCC2861D6884FC0090EBC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBCCC28C1D6884FC0090EBC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBCCC2751D6884FC0090EBC3 /* FarkleRedo */;
+			targetProxy = DBCCC28B1D6884FC0090EBC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DBCCC27D1D6884FC0090EBC3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBCCC27E1D6884FC0090EBC3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DBCCC2821D6884FC0090EBC3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBCCC2831D6884FC0090EBC3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DBCCC2911D6884FC0090EBC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DBCCC2921D6884FC0090EBC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DBCCC2941D6884FC0090EBC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FarkleRedo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YemiAjibola.FarkleRedo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DBCCC2951D6884FC0090EBC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FarkleRedo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YemiAjibola.FarkleRedo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DBCCC2971D6884FC0090EBC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FarkleRedoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YemiAjibola.FarkleRedoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FarkleRedo.app/FarkleRedo";
+			};
+			name = Debug;
+		};
+		DBCCC2981D6884FC0090EBC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FarkleRedoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YemiAjibola.FarkleRedoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FarkleRedo.app/FarkleRedo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBCCC2711D6884FC0090EBC3 /* Build configuration list for PBXProject "FarkleRedo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBCCC2911D6884FC0090EBC3 /* Debug */,
+				DBCCC2921D6884FC0090EBC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBCCC2931D6884FC0090EBC3 /* Build configuration list for PBXNativeTarget "FarkleRedo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBCCC2941D6884FC0090EBC3 /* Debug */,
+				DBCCC2951D6884FC0090EBC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DBCCC2961D6884FC0090EBC3 /* Build configuration list for PBXNativeTarget "FarkleRedoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBCCC2971D6884FC0090EBC3 /* Debug */,
+				DBCCC2981D6884FC0090EBC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBCCC26E1D6884FC0090EBC3 /* Project object */;
+}
