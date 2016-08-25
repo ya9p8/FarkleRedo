@@ -16,18 +16,22 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     @IBOutlet weak var diceFour: DiceImageView!
     @IBOutlet weak var diceThree: DiceImageView!
     @IBOutlet weak var diceTwo: DiceImageView!
-    @IBOutlet weak var userScoreLabel: UILabel!
+    @IBOutlet weak var playerOneScoreLabel: UILabel!
+    @IBOutlet weak var playerTwoScoreLabel: UILabel!
+    
     @IBOutlet weak var roundScoreLabel: UILabel!
     @IBOutlet weak var rollScoreLabel: UILabel!
    
-    
+    var playerOne: Player = Player()
+    var playerTwo: Player = Player()
+    var currentPlayer: UnsafeMutablePointer<Player> = nil
     
     var selectedDice = NSMutableArray()
     var boardDice = NSMutableArray()
     var multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
     var bankScore = 0 {
         willSet {
-            userScoreLabel.text = "User score: \(newValue)"
+            //userScoreLabel.text = "User score: \(newValue)"
         }
     }
     var roundScore = 0 {
@@ -49,10 +53,17 @@ class ViewController: UIViewController, DiceImageViewDelegate {
         rollScore = 0
         roundScore = 0
         
+        //Player One goes first
+        currentPlayer = &playerOne
+
         for die in boardDice {
             let realDie = die as! DiceImageView
             realDie.delegate = self
         }
+    }
+    
+    func switchPlayer() {
+        
     }
     
     @IBAction func onRollButtonTapped(sender: UIButton) {
@@ -67,11 +78,15 @@ class ViewController: UIViewController, DiceImageViewDelegate {
         scoreRoll(boardDice)
         
         if boardDice.count == 0 {
-            showMessage("Hot Dice", message: "You get to roll again", roundReset: false)
+            showMessage("Hot Dice", message: "You get to roll again")
+            reset()
         }
         
         if checkForFarkle(boardDice) == true {
-            showMessage("Farkle!", message: "You farkled. You lose your round score.", roundReset: true)
+            showMessage("Farkle!", message: "You farkled. You lose your round score.")
+            
+            roundScore = 0
+            reset()
         }
     }
     
@@ -84,14 +99,9 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     }
     
     
-    func showMessage(title: String, message: String, roundReset: Bool) {
+    func showMessage(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "OK", style: .Default) { (_) in
-            if roundReset {
-                self.roundScore = 0
-            }
-            self.reset()
-        }
+        let okAction = UIAlertAction(title: title, style: .Default, handler: nil)
         alert.addAction(okAction)
         
         presentViewController(alert, animated: true, completion: nil)
