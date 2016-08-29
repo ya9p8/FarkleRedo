@@ -9,11 +9,13 @@
 import Foundation
 
 class Player {
-    var score: Int!
+    var score: Int
     var selectedDice: NSMutableArray!
     
    init() {
         score = 0
         selectedDice = NSMutableArray()
     }
+    
 }
+

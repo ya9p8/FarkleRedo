@@ -22,7 +22,6 @@ class DiceImageView: UIImageView {
         self.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DiceImageView.diceImageViewWasTapped))
         self.addGestureRecognizer(tapGesture)
-        imageName = "1"
     }
     
     func diceImageViewWasTapped() {
