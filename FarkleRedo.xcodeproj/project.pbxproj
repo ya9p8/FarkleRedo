@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB5DAC911D76A63900EFB55A /* ScoreLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5DAC901D76A63900EFB55A /* ScoreLogic.swift */; };
 		DB9C65901D6F706A00F78043 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9C658F1D6F706A00F78043 /* Player.swift */; };
 		DBCCC27A1D6884FC0090EBC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCC2791D6884FC0090EBC3 /* AppDelegate.swift */; };
 		DBCCC27C1D6884FC0090EBC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCCC27B1D6884FC0090EBC3 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB5DAC901D76A63900EFB55A /* ScoreLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreLogic.swift; sourceTree = "<group>"; };
 		DB9C658F1D6F706A00F78043 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		DBCCC2761D6884FC0090EBC3 /* FarkleRedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FarkleRedo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBCCC2791D6884FC0090EBC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				DBCCC2791D6884FC0090EBC3 /* AppDelegate.swift */,
 				DBCCC29D1D6887470090EBC3 /* DiceImageView.swift */,
 				DBCCC27B1D6884FC0090EBC3 /* ViewController.swift */,
+				DB5DAC901D76A63900EFB55A /* ScoreLogic.swift */,
 				DBCCC27D1D6884FC0090EBC3 /* Main.storyboard */,
 				DBCCC2801D6884FC0090EBC3 /* Assets.xcassets */,
 				DBCCC2821D6884FC0090EBC3 /* LaunchScreen.storyboard */,
@@ -204,6 +207,7 @@
 				DBCCC27C1D6884FC0090EBC3 /* ViewController.swift in Sources */,
 				DBCCC27A1D6884FC0090EBC3 /* AppDelegate.swift in Sources */,
 				DBCCC29E1D6887470090EBC3 /* DiceImageView.swift in Sources */,
+				DB5DAC911D76A63900EFB55A /* ScoreLogic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

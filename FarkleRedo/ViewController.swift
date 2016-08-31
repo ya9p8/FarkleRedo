@@ -20,15 +20,17 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     @IBOutlet weak var playerTwoScoreLabel: UILabel!
     @IBOutlet weak var roundScoreLabel: UILabel!
     @IBOutlet weak var rollScoreLabel: UILabel!
+    @IBOutlet weak var gatherDiceLabel: UILabel!
    
     var playerOne:  Player!
     var playerTwo: Player!
     var currentPlayer:Player!
     var players:NSArray!
     
-    var selectedDice = NSMutableArray()
-    var boardDice = NSMutableArray()
-    var multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
+    var selectedDice = [DiceImageView]()
+    var boardDice: [DiceImageView]!
+    var animator = UIDynamicAnimator()
+    var scoreLogic  = ScoreLogic()
     
     var roundScore = 0 {
         willSet {
@@ -44,8 +46,6 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        boardDice.addObjectsFromArray([diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix])
-        rollScore = 0
         roundScore = 0
         
         playerOne = Player()
@@ -53,33 +53,36 @@ class ViewController: UIViewController, DiceImageViewDelegate {
         players = [playerOne, playerTwo]
         
         currentPlayer = players[0] as! Player
+        
+        gatherDiceLabel.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.gatherDice))
+        gatherDiceLabel.addGestureRecognizer(tapGesture)
+        
+        boardDice = [diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix]
 
         for die in boardDice {
-            let realDie = die as! DiceImageView
-            realDie.delegate = self
+            die.delegate = self
         }
+        
     }
     
     @IBAction func onRollButtonTapped(sender: UIButton) {
-        
-        multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
-        selectedDice.removeAllObjects()
+        selectedDice.removeAll(keepCapacity: true)
         
         for die in boardDice  {
-            let realDie = die as! DiceImageView
-            realDie.roll()
+            die.roll()
         }
         roundScore += rollScore
         
-        scoreRoll(boardDice)
+        print(scoreLogic.calculateScore(boardDice))
         
-        if checkForFarkle(boardDice) {
-            showMessage("Farkle!", message: "You farkled. You lose your round score.")
-            
-            roundScore = 0
-            reset()
-            switchPlayers()
-        }
+//        if checkForFarkle(boardDice) {
+//            showMessage("Farkle!", message: "You farkled. You lose your round score.")
+//            
+//            roundScore = 0
+//            reset()
+//            switchPlayers()
+//        }
     }
     
     @IBAction func onBankButtonTapped(sender: UIButton) {
@@ -108,19 +111,17 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     }
     
     func diceImageViewTapped(die: DiceImageView) {
-        multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
-        
-        if !selectedDice.containsObject(die) {
+        if !selectedDice.contains(die) {
             die.alpha = 0.35
-            boardDice.removeObject(die)
-            selectedDice.addObject(die)
+            boardDice.removeAtIndex(boardDice.indexOf(die)!)
+            selectedDice.append(die)
         } else {
             die.alpha = 1.0
-            selectedDice.removeObject(die)
-            boardDice.addObject(die)
+            selectedDice.removeAtIndex(selectedDice.indexOf(die)!)
+            boardDice.append(die)
         }
         
-        scoreRoll(selectedDice)
+        //scoreRoll(selectedDice)
         
         if checkForHotDice() {
             showMessage("Hot Dice!", message: "You get to roll again.")
@@ -129,78 +130,11 @@ class ViewController: UIViewController, DiceImageViewDelegate {
         }
     }
     
-    func countMultiples(diceArray: NSMutableArray) {
-        for die in diceArray {
-            let realDie = die as! DiceImageView
-            
-            for i in 0..<multiplesArray.count  {
-                if Int(realDie.imageName)! == i+1 {
-                    multiplesArray[i] = multiplesArray[i] as! Int + 1
-                }
-            }
-        }
-    }
-    
-    func scoreRoll(diceArray: NSMutableArray) {
-        rollScore = 0
-        var singleCounter = 0
-        var pairCounter = 0
-        var tripleCounter = 0
-        var fourOfAKind = false
-
-        countMultiples(diceArray)
-        //print(multiplesArray)
+    func gatherDice() {
+        print("Gather Dice Label Tapped!")
         
-        for i in 0 ..< multiplesArray.count {
-            let multipleOfI = multiplesArray[i] as! Int
-            //print("There are \(multipleOfI) \(i+1)'s")
-            
-            switch multipleOfI {
-            case 1:
-                rollScore += multiplierScore(i, multiplierFactor: 1)
-                singleCounter += 1
-                break
-            case 2:
-                rollScore += multiplierScore(i, multiplierFactor: 2)
-                pairCounter += 1
-                break
-            case 3:
-                rollScore += multiplierScore(i, multiplierFactor: 3)
-                tripleCounter += 1
-                break
-            case 4:
-                rollScore += 1000
-                fourOfAKind = true
-                break
-            case 5:
-                rollScore += 2000
-                break
-            case 6:
-                rollScore += 3000
-                break
-            default:
-                break
-            }
-            if tripleCounter == 2 {
-                rollScore = 2500
-            }
-            if pairCounter == 3 || (pairCounter == 1 && fourOfAKind) || singleCounter == 6 {
-                rollScore = 1500
-            }
-        }
-        //print("---------------")
-        
-        // Disable selected dice
-//        for die in selectedDice {
-//            let realDie  = die as! DiceImageView
-//            realDie.userInteractionEnabled = false
-//        }
     }
     
-    
-    func checkForFarkle(diceArray: NSMutableArray) -> Bool {
-        return (rollScore == 0  && boardDice.count > 0) ? true : false
-    }
     
     func checkForHotDice() -> Bool {
         return boardDice.count == 0
@@ -237,20 +171,18 @@ class ViewController: UIViewController, DiceImageViewDelegate {
     }
     
     func reset() {
-        multiplesArray = NSMutableArray(array: [0,0,0,0,0,0])
         rollScore = 0
         
-        boardDice = NSMutableArray(array: [diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix])
-        selectedDice = NSMutableArray()
+        boardDice = [diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix]
+        selectedDice.removeAll(keepCapacity: true)
         
         for die in boardDice {
-            let realDie = die as! DiceImageView
-            realDie.roll()
-            realDie.alpha = 1.0
-            realDie.userInteractionEnabled = true
+            die.roll()
+            die.alpha = 1.0
+            die.userInteractionEnabled = true
         }
-        scoreRoll(boardDice)
-        checkForFarkle(boardDice)
+        //scoreRoll(boardDice)
+        //scoreLogic.checkForFarkle(boardDice)
     }
     
 }

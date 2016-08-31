@@ -87,7 +87,7 @@
                                 </constraints>
                                 <state key="normal" title="Roll"/>
                                 <connections>
-                                    <action selector="onRollButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWz-fM-z0e"/>
+                                    <action selector="onRollButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnI-oA-2KW"/>
                                 </connections>
                             </button>
                             <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="RgN-QA-U7t" customClass="DiceImageView" customModule="FarkleRedo" customModuleProvider="target">
@@ -128,6 +128,16 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gather Dice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWS-Nq-EtB">
+                                <rect key="frame" x="160" y="212" width="280" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="DRZ-6L-9te"/>
+                                    <constraint firstAttribute="height" constant="205" id="Hsi-hA-liE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -138,6 +148,7 @@
                             <constraint firstItem="zTW-FV-UiO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="8Po-bv-fU7"/>
                             <constraint firstItem="tMh-Nk-Sed" firstAttribute="centerX" secondItem="YZk-hP-XkN" secondAttribute="centerX" id="8x9-WO-yuj"/>
                             <constraint firstItem="jdr-qW-P5M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BnU-79-7AI"/>
+                            <constraint firstItem="JWS-Nq-EtB" firstAttribute="top" secondItem="QNG-Gl-ZCa" secondAttribute="bottom" constant="79" id="LWe-Qt-KfQ"/>
                             <constraint firstItem="AOL-8H-nSZ" firstAttribute="top" secondItem="zTW-FV-UiO" secondAttribute="bottom" constant="28" id="OP5-87-Kx1"/>
                             <constraint firstItem="RgN-QA-U7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="UFj-ik-tmu"/>
                             <constraint firstItem="5UL-tr-wj0" firstAttribute="top" secondItem="RgN-QA-U7t" secondAttribute="bottom" constant="28" id="XcI-bc-lMs"/>
@@ -149,6 +160,7 @@
                             <constraint firstItem="zTW-FV-UiO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="cwK-mt-67F"/>
                             <constraint firstItem="iBj-qH-Q5b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="jDZ-er-yeb"/>
                             <constraint firstItem="4Y9-7y-Srd" firstAttribute="top" secondItem="kxJ-OX-4fe" secondAttribute="bottom" constant="24" id="k83-U7-3ck"/>
+                            <constraint firstItem="JWS-Nq-EtB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzM-39-eSN"/>
                             <constraint firstAttribute="trailing" secondItem="RgN-QA-U7t" secondAttribute="trailing" constant="35" id="pVC-Y4-vwQ"/>
                             <constraint firstItem="QNG-Gl-ZCa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-17" id="suq-1S-5ro"/>
                             <constraint firstItem="eH0-tr-nvt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wCR-fk-td7"/>
@@ -169,6 +181,7 @@
                         <outlet property="diceSix" destination="RgN-QA-U7t" id="olU-Hp-psn"/>
                         <outlet property="diceThree" destination="zTW-FV-UiO" id="Z0Y-Zw-vxj"/>
                         <outlet property="diceTwo" destination="5UL-tr-wj0" id="cGb-r4-LAi"/>
+                        <outlet property="gatherDiceLabel" destination="JWS-Nq-EtB" id="pmL-N8-LN8"/>
                         <outlet property="playerOneScoreLabel" destination="eH0-tr-nvt" id="T4U-bE-DlG"/>
                         <outlet property="playerTwoScoreLabel" destination="jdr-qW-P5M" id="mpq-C6-7EK"/>
                         <outlet property="rollScoreLabel" destination="QNG-Gl-ZCa" id="6NC-bF-7Tx"/>
