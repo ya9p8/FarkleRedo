@@ -8,14 +8,36 @@
 
 import Foundation
 
-class Player {
-    var score: Int
-    var selectedDice: NSMutableArray!
+protocol PlayerDelegate {
+    func playerScoreWasUpdated()
+}
+
+class Player:Equatable {
+    var score: Int {
+        didSet {
+            delegate?.playerScoreWasUpdated()
+        }
+    }
+    var selectedDice:[DiceImageView]!
+    var name:String? = ""
+    var delegate: PlayerDelegate?
+    
     
    init() {
         score = 0
-        selectedDice = NSMutableArray()
+        selectedDice = [DiceImageView]()
+    }
+    
+    init(nameString: String) {
+        score = 0
+        selectedDice = [DiceImageView]()
+        name = nameString
     }
     
 }
+
+func ==(lhs: Player, rhs: Player) -> Bool {
+    return lhs.name == rhs.name
+}
+
 

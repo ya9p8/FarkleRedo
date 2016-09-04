@@ -85,11 +85,11 @@
 				DBCCC29D1D6887470090EBC3 /* DiceImageView.swift */,
 				DBCCC27B1D6884FC0090EBC3 /* ViewController.swift */,
 				DB5DAC901D76A63900EFB55A /* ScoreLogic.swift */,
+				DB9C658F1D6F706A00F78043 /* Player.swift */,
 				DBCCC27D1D6884FC0090EBC3 /* Main.storyboard */,
 				DBCCC2801D6884FC0090EBC3 /* Assets.xcassets */,
 				DBCCC2821D6884FC0090EBC3 /* LaunchScreen.storyboard */,
 				DBCCC2851D6884FC0090EBC3 /* Info.plist */,
-				DB9C658F1D6F706A00F78043 /* Player.swift */,
 			);
 			path = FarkleRedo;
 			sourceTree = "<group>";

@@ -16,12 +16,15 @@ class DiceImageView: UIImageView {
     
     var delegate: DiceImageViewDelegate?
     var imageName: String!
+    var origin: CGPoint!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(DiceImageView.diceImageViewWasTapped))
         self.addGestureRecognizer(tapGesture)
+        
+        origin = self.center
     }
     
     func diceImageViewWasTapped() {

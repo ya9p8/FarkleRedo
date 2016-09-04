@@ -129,10 +129,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gather Dice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWS-Nq-EtB">
-                                <rect key="frame" x="160" y="212" width="280" height="205"/>
+                                <rect key="frame" x="35" y="529" width="530" height="51"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="DRZ-6L-9te"/>
-                                    <constraint firstAttribute="height" constant="205" id="Hsi-hA-liE"/>
+                                    <constraint firstAttribute="height" constant="51" id="Tex-Cd-FBT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -148,7 +147,8 @@
                             <constraint firstItem="zTW-FV-UiO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="35" id="8Po-bv-fU7"/>
                             <constraint firstItem="tMh-Nk-Sed" firstAttribute="centerX" secondItem="YZk-hP-XkN" secondAttribute="centerX" id="8x9-WO-yuj"/>
                             <constraint firstItem="jdr-qW-P5M" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="BnU-79-7AI"/>
-                            <constraint firstItem="JWS-Nq-EtB" firstAttribute="top" secondItem="QNG-Gl-ZCa" secondAttribute="bottom" constant="79" id="LWe-Qt-KfQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JWS-Nq-EtB" secondAttribute="trailing" constant="15" id="E6c-Vk-xNz"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JWS-Nq-EtB" secondAttribute="bottom" constant="20" id="JQ5-uy-PCv"/>
                             <constraint firstItem="AOL-8H-nSZ" firstAttribute="top" secondItem="zTW-FV-UiO" secondAttribute="bottom" constant="28" id="OP5-87-Kx1"/>
                             <constraint firstItem="RgN-QA-U7t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="UFj-ik-tmu"/>
                             <constraint firstItem="5UL-tr-wj0" firstAttribute="top" secondItem="RgN-QA-U7t" secondAttribute="bottom" constant="28" id="XcI-bc-lMs"/>
@@ -160,7 +160,7 @@
                             <constraint firstItem="zTW-FV-UiO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="117" id="cwK-mt-67F"/>
                             <constraint firstItem="iBj-qH-Q5b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="jDZ-er-yeb"/>
                             <constraint firstItem="4Y9-7y-Srd" firstAttribute="top" secondItem="kxJ-OX-4fe" secondAttribute="bottom" constant="24" id="k83-U7-3ck"/>
-                            <constraint firstItem="JWS-Nq-EtB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nzM-39-eSN"/>
+                            <constraint firstItem="JWS-Nq-EtB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="lD5-zf-Xcv"/>
                             <constraint firstAttribute="trailing" secondItem="RgN-QA-U7t" secondAttribute="trailing" constant="35" id="pVC-Y4-vwQ"/>
                             <constraint firstItem="QNG-Gl-ZCa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-17" id="suq-1S-5ro"/>
                             <constraint firstItem="eH0-tr-nvt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wCR-fk-td7"/>
@@ -184,6 +184,7 @@
                         <outlet property="gatherDiceLabel" destination="JWS-Nq-EtB" id="pmL-N8-LN8"/>
                         <outlet property="playerOneScoreLabel" destination="eH0-tr-nvt" id="T4U-bE-DlG"/>
                         <outlet property="playerTwoScoreLabel" destination="jdr-qW-P5M" id="mpq-C6-7EK"/>
+                        <outlet property="rollButton" destination="tMh-Nk-Sed" id="lV4-bE-l1k"/>
                         <outlet property="rollScoreLabel" destination="QNG-Gl-ZCa" id="6NC-bF-7Tx"/>
                         <outlet property="roundScoreLabel" destination="iBj-qH-Q5b" id="4hA-mN-Exa"/>
                     </connections>

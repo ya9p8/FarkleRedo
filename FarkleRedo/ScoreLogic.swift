@@ -8,12 +8,34 @@
 
 import Foundation
 
+protocol ScoreLogicDelegate {
+    func rollScoreWasUpdated()
+    func roundScoreWasUpdated()
+}
+
 class ScoreLogic {
     
-    var multiplesArray:[Int] = [0, 0, 0, 0, 0, 0]
+    var multiplesArray: [Int]!
+    var rollScore: Int {
+        didSet {
+            delegate?.rollScoreWasUpdated()
+        }
+    }
+    var roundScore: Int {
+        didSet {
+            delegate?.roundScoreWasUpdated()
+        }
+    }
+    var delegate: ScoreLogicDelegate?
+    
+    init() {
+        roundScore = 0
+        rollScore = 0
+        multiplesArray = [0,0,0,0,0,0]
+    }
     
     func countMultiples(diceHand: [DiceImageView]) {
-        multiplesArray.removeAll(keepCapacity: true)
+        multiplesArray = [0,0,0,0,0,0]
         
         for die in diceHand {
             for i in 0..<multiplesArray.count  {
@@ -45,12 +67,8 @@ class ScoreLogic {
         }
     }
     
-    func checkForFarkle(diceArray: [DiceImageView], rollScore: Int) -> Bool {
-        return (rollScore == 0  && diceArray.count > 0) ? true : false
-    }
-    
-    func calculateScore(diceHand: [DiceImageView]) -> Int {
-        var rollScore = 0
+    func calculateScore(diceHand: [DiceImageView]) {
+        rollScore = 0
         var singleCounter = 0
         var pairCounter = 0
         var tripleCounter = 0
@@ -60,7 +78,6 @@ class ScoreLogic {
         
         for i in 0 ..< multiplesArray.count {
             let multipleOfI = multiplesArray[i]
-            //print("There are \(multipleOfI) \(i+1)'s")
             
             switch multipleOfI {
             case 1:
@@ -95,7 +112,5 @@ class ScoreLogic {
                 rollScore = 1500
             }
         }
-        
-        return rollScore
     }
 }
